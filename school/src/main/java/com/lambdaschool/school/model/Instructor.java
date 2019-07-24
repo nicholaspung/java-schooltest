@@ -16,7 +16,7 @@ public class Instructor
 
     private String instructname;
 
-    @OneToMany(mappedBy = "instructor")
+    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("instructors")
     private List<Course> courses = new ArrayList<>();
 
